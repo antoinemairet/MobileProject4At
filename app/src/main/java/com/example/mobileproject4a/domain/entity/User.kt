@@ -1,6 +1,9 @@
 package com.example.mobileproject4a.domain.entity
 
-data class User(val emailUser: String) {
+data class User(
+
+    val email: String
+
+    )
 
 
-}
