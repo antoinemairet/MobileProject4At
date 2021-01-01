@@ -7,8 +7,7 @@ Antoine Mairet - 4rd Year at ESIEA
 
 ## Introduction
 
-This Android application list the top 250 must-see movies of all time. A watch list is integrated into the app to help 
-you remember those you want to see. It is intuitive and optimized for the ease of everyone. Enjoy it!
+This Android application list the top 250 must-see movies of all time.
 
 ## Prerequisite
 
