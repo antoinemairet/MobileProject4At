@@ -35,11 +35,11 @@ you remember those you want to see. It is intuitive and optimized for the ease o
   * Login button
   * Create an account button
   
-![alt text](https://github.com/antoinemairet/MobileProject4At/blob/main/ImageReadMe/login.png?raw=true)
+![alt text](https://github.com/antoinemairet/MobileProject4At/blob/main/ImageReadMe/login.PNG?raw=true)
 
 * Page to create an account
 
-![alt text](https://github.com/antoinemairet/MobileProject4At/blob/main/ImageReadMe/create.png?raw=true)
+![alt text](https://github.com/antoinemairet/MobileProject4At/blob/main/ImageReadMe/create.PNG?raw=true)
 
 
 ## License
