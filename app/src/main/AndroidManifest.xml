@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * MIT License
+  ~  * Copyright (c) 2021 Antoine Mairet
+  ~  * Last modified 01/01/21 20:34
+  ~  */
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mobileproject4a">
     <uses-permission android:name="android.permission.INTERNET" />

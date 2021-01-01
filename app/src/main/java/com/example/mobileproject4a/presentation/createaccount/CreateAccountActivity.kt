@@ -1,3 +1,11 @@
+/*
+ * *
+ *  * MIT License
+ *  * Copyright (c) 2021 Antoine Mairet
+ *  * Last modified 31/12/20 11:32
+ *
+ */
+
 package com.example.mobileproject4a.presentation.createaccount
 
 import android.content.Intent

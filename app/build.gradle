@@ -1,3 +1,11 @@
+/*
+ * *
+ *  * MIT License
+ *  * Copyright (c) 2021 Antoine Mairet
+ *  * Last modified 01/01/21 20:31
+ *
+ */
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'

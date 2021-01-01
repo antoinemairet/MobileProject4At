@@ -1,3 +1,11 @@
+/*
+ * *
+ *  * MIT License
+ *  * Copyright (c) 2021 Antoine Mairet
+ *  * Last modified 30/12/20 12:08
+ *
+ */
+
 package com.example.mobileproject4a.domain.usecase
 
 import com.example.mobileproject4a.data.repository.UserRepository

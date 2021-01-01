@@ -1,3 +1,11 @@
+/*
+ * *
+ *  * MIT License
+ *  * Copyright (c) 2021 Antoine Mairet
+ *  * Last modified 29/12/20 14:46
+ *
+ */
+
 package com.example.mobileproject4a
 
 import androidx.test.platform.app.InstrumentationRegistry

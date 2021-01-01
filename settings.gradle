@@ -1,2 +1,10 @@
+/*
+ * *
+ *  * MIT License
+ *  * Copyright (c) 2021 Antoine Mairet
+ *  * Last modified 29/12/20 14:46
+ *
+ */
+
 include ':app'
 rootProject.name = "MobileProject4A"

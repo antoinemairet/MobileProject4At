@@ -1,3 +1,11 @@
+/*
+ * *
+ *  * MIT License
+ *  * Copyright (c) 2021 Antoine Mairet
+ *  * Last modified 30/12/20 13:03
+ *
+ */
+
 package com.example.mobileproject4a.injection
 
 import android.app.Application

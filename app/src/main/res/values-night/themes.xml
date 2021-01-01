@@ -1,3 +1,11 @@
+<!--
+  ~ /**
+  ~  * MIT License
+  ~  * Copyright (c) 2021 Antoine Mairet
+  ~  * Last modified 29/12/20 14:46
+  ~  */
+  -->
+
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.MobileProject4A" parent="Theme.MaterialComponents.DayNight.DarkActionBar">

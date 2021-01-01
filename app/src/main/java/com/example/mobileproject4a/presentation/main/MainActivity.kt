@@ -1,3 +1,11 @@
+/*
+ * *
+ *  * MIT License
+ *  * Copyright (c) 2021 Antoine Mairet
+ *  * Last modified 31/12/20 11:50
+ *
+ */
+
 package com.example.mobileproject4a.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
