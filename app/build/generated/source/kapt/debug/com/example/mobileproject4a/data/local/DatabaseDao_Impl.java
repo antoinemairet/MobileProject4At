@@ -29,7 +29,7 @@ public final class DatabaseDao_Impl implements DatabaseDao {
     this.__insertionAdapterOfUserLocal = new EntityInsertionAdapter<UserLocal>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `UserLocal` (`uid`,`email`) VALUES (?,?)";
+        return "INSERT OR ABORT INTO `UserLocal` (`uid`,`email`,`password`,`firstname`) VALUES (?,?,?,?)";
       }
 
       @Override
@@ -43,6 +43,16 @@ public final class DatabaseDao_Impl implements DatabaseDao {
           stmt.bindNull(2);
         } else {
           stmt.bindString(2, value.getEmail());
+        }
+        if (value.getPassword() == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindString(3, value.getPassword());
+        }
+        if (value.getFirstName() == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindString(4, value.getFirstName());
         }
       }
     };
@@ -89,19 +99,25 @@ public final class DatabaseDao_Impl implements DatabaseDao {
 
   @Override
   public List<UserLocal> getAll() {
-    final String _sql = "SELECT * FROM userlocal";
+    final String _sql = "SELECT * FROM userLocal";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
       final int _cursorIndexOfUid = CursorUtil.getColumnIndexOrThrow(_cursor, "uid");
       final int _cursorIndexOfEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "email");
+      final int _cursorIndexOfPassword = CursorUtil.getColumnIndexOrThrow(_cursor, "password");
+      final int _cursorIndexOfFirstName = CursorUtil.getColumnIndexOrThrow(_cursor, "firstname");
       final List<UserLocal> _result = new ArrayList<UserLocal>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final UserLocal _item;
         final String _tmpEmail;
         _tmpEmail = _cursor.getString(_cursorIndexOfEmail);
-        _item = new UserLocal(_tmpEmail);
+        final String _tmpPassword;
+        _tmpPassword = _cursor.getString(_cursorIndexOfPassword);
+        final String _tmpFirstName;
+        _tmpFirstName = _cursor.getString(_cursorIndexOfFirstName);
+        _item = new UserLocal(_tmpEmail,_tmpPassword,_tmpFirstName);
         final Integer _tmpUid;
         if (_cursor.isNull(_cursorIndexOfUid)) {
           _tmpUid = null;
@@ -119,25 +135,37 @@ public final class DatabaseDao_Impl implements DatabaseDao {
   }
 
   @Override
-  public UserLocal findByName(final String email) {
-    final String _sql = "SELECT * FROM userLocal WHERE email LIKE ? LIMIT 1";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+  public UserLocal findByName(final String email, final String password) {
+    final String _sql = "SELECT * FROM userLocal WHERE email LIKE ? AND password LIKE ? LIMIT 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     if (email == null) {
       _statement.bindNull(_argIndex);
     } else {
       _statement.bindString(_argIndex, email);
     }
+    _argIndex = 2;
+    if (password == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, password);
+    }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
       final int _cursorIndexOfUid = CursorUtil.getColumnIndexOrThrow(_cursor, "uid");
       final int _cursorIndexOfEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "email");
+      final int _cursorIndexOfPassword = CursorUtil.getColumnIndexOrThrow(_cursor, "password");
+      final int _cursorIndexOfFirstName = CursorUtil.getColumnIndexOrThrow(_cursor, "firstname");
       final UserLocal _result;
       if(_cursor.moveToFirst()) {
         final String _tmpEmail;
         _tmpEmail = _cursor.getString(_cursorIndexOfEmail);
-        _result = new UserLocal(_tmpEmail);
+        final String _tmpPassword;
+        _tmpPassword = _cursor.getString(_cursorIndexOfPassword);
+        final String _tmpFirstName;
+        _tmpFirstName = _cursor.getString(_cursorIndexOfFirstName);
+        _result = new UserLocal(_tmpEmail,_tmpPassword,_tmpFirstName);
         final Integer _tmpUid;
         if (_cursor.isNull(_cursorIndexOfUid)) {
           _tmpUid = null;
